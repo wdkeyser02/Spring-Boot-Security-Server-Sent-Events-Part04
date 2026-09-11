@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 @RestController
-public class TimeController {
+public class ColorController {
 
 	private final ExecutorService executor = Executors.newCachedThreadPool();
 	private Random rand = new Random();
