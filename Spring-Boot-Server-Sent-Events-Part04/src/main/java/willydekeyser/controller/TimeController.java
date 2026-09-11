@@ -1,8 +1,7 @@
 package willydekeyser.controller;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -14,18 +13,25 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 public class TimeController {
 
 	private final ExecutorService executor = Executors.newCachedThreadPool();
-	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss");
+	private Random rand = new Random();
 	
 	@GetMapping("/time")
 	public SseEmitter time() {
-		
 		SseEmitter emitter = new SseEmitter(Long.MAX_VALUE);
 		executor.execute(() -> {
             try {
                 while (true) {
                 	emitter.send(SseEmitter.event()
-                			.name("test")
-                			.data("Date: " + LocalDateTime.now().format(formatter))
+                			.name("red")
+                			.data("" + rand.nextInt(255))
+                			.build());
+                	emitter.send(SseEmitter.event()
+                			.name("green")
+                			.data("" + rand.nextInt(255))
+                			.build());
+                	emitter.send(SseEmitter.event()
+                			.name("blue")
+                			.data("" + rand.nextInt(255))
                 			.build());
                     Thread.sleep(1000);
                 }
