@@ -14,14 +14,14 @@
 <body style="margin:25px">
 	<div 
 		hx-sse:connect="/time" 
-		hx-on:red="color_red = event.detail.data; htmx.find('#red').innerHTML = color_red; htmx.find('#teksten').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'"
-		hx-on:green="color_green = event.detail.data; htmx.find('#green').innerHTML = color_green; htmx.find('#teksten').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'"
-		hx-on:blue="color_blue = event.detail.data; htmx.find('#blue').innerHTML = color_blue; htmx.find('#teksten').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'">
+		hx-on:red="color_red = event.detail.data; htmx.find('#red').innerHTML = color_red; htmx.find('#color_block').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'"
+		hx-on:green="color_green = event.detail.data; htmx.find('#green').innerHTML = color_green; htmx.find('#color_block').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'"
+		hx-on:blue="color_blue = event.detail.data; htmx.find('#blue').innerHTML = color_blue; htmx.find('#color_block').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'">
 	</div>
 	<h1>Spring Boot Tutorial</h1>
-	<p>RED: <span id="red"></span></p>
-	<p>GREEN: <span id="green"></span></p>
-	<p>BLUE: <span id="blue"></span></p>
-	<div id="teksten" style="display:inline-block; width:200px; height:200px; background-color:rgb(0 0 0)"></div>
+	<p>RED: <span id="red">0</span></p>
+	<p>GREEN: <span id="green">0</span></p>
+	<p>BLUE: <span id="blue">0</span></p>
+	<div id="color_block" style="display:inline-block; width:200px; height:200px; background-color:rgb(0 0 0)"></div>
 </body>
 </html>
