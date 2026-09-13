@@ -15,7 +15,7 @@ public class ColorController {
 	private final ExecutorService executor = Executors.newCachedThreadPool();
 	private Random rand = new Random();
 	
-	@GetMapping("/time")
+	@GetMapping("/color")
 	public SseEmitter time() {
 		SseEmitter emitter = new SseEmitter(Long.MAX_VALUE);
 		executor.execute(() -> {

@@ -13,7 +13,7 @@
 </head>
 <body style="margin:25px">
 	<div 
-		hx-sse:connect="/time" 
+		hx-sse:connect="/color" 
 		hx-on:red="color_red = event.detail.data; htmx.find('#red').innerHTML = color_red; htmx.find('#color_block').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'"
 		hx-on:green="color_green = event.detail.data; htmx.find('#green').innerHTML = color_green; htmx.find('#color_block').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'"
 		hx-on:blue="color_blue = event.detail.data; htmx.find('#blue').innerHTML = color_blue; htmx.find('#color_block').style.backgroundColor='rgb(' + color_red + ',' + color_green + ','+ color_blue +')'">
